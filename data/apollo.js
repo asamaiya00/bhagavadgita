@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 const isServer = typeof window === "undefined";
 const windowApolloState = !isServer && window.__NEXT_DATA__.apolloState;
@@ -38,26 +38,3 @@ export function getApolloClient(forceNew) {
 
   return CLIENT;
 }
-
-export const QUERY = gql`
-  query {
-    allGitaLanguages {
-      edges {
-        node {
-          id
-        }
-      }
-    }
-  }
-`;
-export const allGitaChaptersQuery = gql`
-  query {
-    allGitaChapters {
-      nodes {
-        chapterNumber
-        nameTranslated
-        versesCount
-      }
-    }
-  }
-`;

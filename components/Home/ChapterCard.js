@@ -1,30 +1,35 @@
 import React from "react";
 import Link from "next/link";
 
-const VerseCard = () => {
+const ChapterCard = ({ chapter }) => {
   return (
-    <Link href="/verse">
+    <Link href={`/chapter/${chapter.id}`}>
       <div className="bg-white shadow-xl  border-2 border-white mt-6 rounded-md p-6 hover:bg-box-bg hover:shadow-none hover:border-box-stroke hover:border-2 hover:cursor-pointer">
-        <h3 className="text-my-orange font-bold">Chapter 1</h3>
-        <h2 className="text-xl font-bold">Sraddhatraya Vibhaga Yoga</h2>
+        <h3 className="text-my-orange font-bold">
+          Chapter {chapter?.chapterNumber || 1}
+        </h3>
+        <h2 className="text-xl font-bold">
+          {chapter?.nameTranslated || "Sraddhatraya Vibhaga Yoga"}
+        </h2>
         <p className="text-gray-500 mt-2">
-          Cupiditate maiores ullam eveniet adipisci in doloribus nulla minus.
-          Voluptas iusto libero adipisci rem et corporis.
+          {chapter.chapterSummary.substring(0, 195)}...
         </p>
 
         <div className="flex justify-between">
           <div className="flex text-sm items-center mt-4">
             <img src="/list.svg" className="h-5 w-5 mr-4" />
-            42 Verses
+            {chapter?.versesCount || 42} Verses
           </div>
 
           <div className="flex mt-4">
             <div className="flex text-sm items-center align-middle mr-3">
-              <img src="/bookmark.svg" className="h-4  w-4 mr-1" />2
+              <img src="/bookmark.svg" className="h-4  w-4 mr-1" />
+              {Math.floor(Math.random() * 10)}
             </div>
 
             <div className="flex text-sm items-center">
-              <img src="/shuffle.svg" className="h-5 w-5 mr-1" />2
+              <img src="/shuffle.svg" className="h-5 w-5 mr-1" />
+              {Math.floor(Math.random() * 10)}
             </div>
           </div>
         </div>
@@ -33,4 +38,4 @@ const VerseCard = () => {
   );
 };
 
-export default VerseCard;
+export default ChapterCard;

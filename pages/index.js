@@ -9,12 +9,13 @@ import VerseOfDay from "../components/Home/VerseOfDay";
 import HomeLayout from "../layouts/HomeLayout";
 import { useDispatch, useSelector } from "react-redux";
 import { useQuery } from "@apollo/client";
-import { QUERY } from "../data/apollo";
+import { getApolloClient } from "../data/apollo";
+import { allGitaChaptersQuery } from "../data/queries";
 
-export default function Home() {
+export default function Home({ allGitaChapters }) {
   const dispatch = useDispatch();
   const settings = useSelector((state) => state.settings);
-  const { data, loading, error } = useQuery(QUERY);
+  const { data, loading, error } = useQuery(allGitaChaptersQuery);
 
   console.log({ loading, error });
 
@@ -26,13 +27,13 @@ export default function Home() {
   }, [loading]);
 
   useEffect(() => {
-    console.log(data);
+    // console.log(data);
   }, [data]);
 
   return (
     <div className="font-inter min-h-screen py-2">
       <Head>
-        <title>Bhagwat Gita App</title>
+        <title>Bhagavad Gita App</title>
         <link rel="icon" href="/favicon.ico" />
         <link ref="style" rel="stylesheet" href="/globals.css" />
       </Head>
@@ -47,9 +48,23 @@ export default function Home() {
           <Banner />
           <VerseOfDay />
           <Newsletter />
-          <Chapters />
+          {allGitaChapters && <Chapters allGitaChapters={allGitaChapters} />}
         </HomeLayout>
       </main>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const apolloClient = getApolloClient(true);
+
+  const { data } = await apolloClient.query({
+    query: allGitaChaptersQuery,
+  });
+
+  return {
+    props: {
+      allGitaChapters: data.allGitaChapters.nodes || [],
+    },
+  };
 }
