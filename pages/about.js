@@ -7,7 +7,7 @@ export default function About() {
   return (
     <div className="mb-16">
       <Head>
-        <title>Bhagwat Gita App - About</title>
+        <title>Bhagavad Gita App - About</title>
         <link rel="icon" href="/favicon.ico" />
         <link ref="style" rel="stylesheet" href="/globals.css" />
       </Head>

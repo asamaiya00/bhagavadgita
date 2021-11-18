@@ -48,7 +48,7 @@ const chapters = [
     icon: DocumentReportIcon,
   },
   {
-    name: "Chapter 8",
+    name: "Chapter 9",
     icon: DocumentReportIcon,
   },
   {
@@ -84,7 +84,7 @@ const chapters = [
     icon: DocumentReportIcon,
   },
   {
-    name: "Chapter 8",
+    name: "Chapter 18",
     icon: DocumentReportIcon,
   },
 ];

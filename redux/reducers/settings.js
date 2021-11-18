@@ -1,4 +1,4 @@
-import * as t from "../Types";
+import * as t from "../types";
 
 const intialState = {
   loading: false,

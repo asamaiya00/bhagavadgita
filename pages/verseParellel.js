@@ -7,7 +7,7 @@ export default function Verseparellel() {
     return (
         <div className="font-inter mb-16">
       <Head>
-        <title>Bhagwat Gita App - Verse</title>
+        <title>Bhagavad Gita App - Verse</title>
         <link rel="icon" href="/favicon.ico" />
         <link ref="style" rel="stylesheet" href="/globals.css" />
       </Head>

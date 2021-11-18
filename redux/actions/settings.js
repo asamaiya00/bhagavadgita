@@ -1,4 +1,4 @@
-import * as t from '../Types'
+import * as t from '../types'
 
 export const loadSettings = () => async (dispatch) => {
     dispatch({

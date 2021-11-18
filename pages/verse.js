@@ -8,7 +8,7 @@ const Verse = () => {
   return (
     <div className="font-inter mb-16">
       <Head>
-        <title>Bhagwat Gita App - Verse</title>
+        <title>Bhagavad Gita App - Verse</title>
         <link rel="icon" href="/favicon.ico" />
         <link ref="style" rel="stylesheet" href="/globals.css" />
       </Head>
@@ -38,8 +38,8 @@ const Verse = () => {
           sañjaya—Sanjay
         </p>
         <img src="floral-divider.svg" className="my-16 w-full" />
-        <Translation/>
-        <Commentary/>
+        <Translation />
+        <Commentary />
       </div>
     </div>
   );
