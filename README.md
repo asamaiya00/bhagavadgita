@@ -1,1 +1,1 @@
-Worked for a client on [Bhagavad Gita App](gita-app.vercel.app). Made using Reactjs, Nextjs, TailwindCSS, TypeScript and bhagavad gita graphql API. 
+Worked for a client on [Bhagavad Gita App](https://gita-app.vercel.app). Made using Reactjs, Nextjs, TailwindCSS, TypeScript and bhagavad gita graphql API. Used Apollo Client for data fetching and improved UX. 
